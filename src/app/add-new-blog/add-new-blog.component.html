@@ -1,0 +1,84 @@
+<form class="form-horizontal text-center">
+  <fieldset>
+
+    <!-- Form Name -->
+    <legend>BLOGS</legend>
+
+    <!-- Text input-->
+
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="blog_name">BLOG NAME</label>
+      <div class="col-md-4">
+        <input id="blog_name" name="BLOG NAME" [(ngModel)]="blogname" placeholder="BLOG NAME" class="form-control input-md" type="text">
+
+      </div>
+    </div>
+
+
+
+    <!-- Select Basic -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="blog_categorie">BLOG CATEGORY</label>
+      <div class="col-md-4">
+        <input id="blog_categorie" name="BLOG CATEGORY" [(ngModel)]="blogcategorie" placeholder="BLOG CATEGORY" class="form-control input-md" type="text">
+
+
+      </div>
+    </div>
+
+    <!-- Select Basic -->
+
+
+
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="blog_heading">BLOG HEADING</label>
+      <div class="col-md-4">
+        <textarea class="form-control" id="blog_heading" name="BLOG HEADING" placeholder="BLOG HEADING" [(ngModel)]="blogheading"></textarea>
+      </div>
+    </div>
+
+    <!-- Textarea -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="blog_detail">BLOG DETAIL</label>
+      <div class="col-md-4">
+        <textarea class="form-control" id="blog_detail" name="BLOG DETAIL" placeholder="BLOG DETAIL" [(ngModel)]="blogdetail"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="blog_image">Blog IMAGE</label>
+      <div class="col-md-4">
+        <input class="form-control" id="blog_image" name="BLOG IMAGE" placeholder="BLOG IMAGE" [(ngModel)]="blogimage">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="blog_link">Blog WEBSITE</label>
+      <div class="col-md-4">
+        <textarea class="form-control" id="blog_link" name="BLOG WEBSITE LINK" placeholder="BLOG WEBSITE LINK" [(ngModel)]="bloglink"></textarea>
+      </div>
+    </div>
+
+
+
+    <!-- Text input-->
+
+
+
+
+
+
+
+
+
+    <div class="form-group d-flex justify-content-center ">
+
+      <div class="col-md-4 ">
+        <button id="singlebutton" name="singlebutton" (click)="addblog()" class="btn btn-primary text-center">ADD BLOG</button>
+      </div>
+    </div>
+  </fieldset>
+</form>

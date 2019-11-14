@@ -1,0 +1,134 @@
+
+
+
+
+
+<div class="main px-5">
+  <div class="row">
+    <div class="leftcolumn">
+
+        <div class="card">
+          <h2 class="text-danger blog">{{list.blogname}}</h2>
+                    <img style="height:300px;width: 600px" src="{{list.blogimage}}">
+          <div class="mt-4">
+                  <div class="d-flex ">
+                    <div class="mr-3" > <i class="material-icons addlik" (click)="addlikes(list.blogid)">
+                      thumb_up
+                    </i> <p>{{list.likes}}</p></div>
+                    <div > <i (click)="adddislikes(list.blogid)" class="material-icons addlik">
+                      thumb_down
+                    </i><p  >{{list.dislikes}}</p></div>
+                  </div>
+                </div>
+          <h5>Author: {{list.users.firstname}} {{list.users.lastname}}</h5>
+          <p>Category: {{list.category}}</p>
+          <p>Created Date:{{list.date}}</p>
+          <p>For more Details:-<a href="{{list.website}}" target="_blank">{{list.website}}</a></p>
+          <p *ngIf="list.users.firstname == yourname" class="text-danger" data-toggle="modal" data-target="#edit-blog-modal" style="cursor: pointer">Update Blog</p>
+
+          <hr>
+          <h4 class="blog text-danger">{{list.category}}</h4>
+          <p>{{list.blogdetail}}</p>
+          <hr>
+        </div>
+
+
+    </div>
+    <div class="rightcolumn">
+      <div class="card">
+        <h4 class="text-center">Profile</h4>
+        <div class="fakeimg text-center" style="height:80px;">
+          <h2 >{{list.users.firstname}} {{list.users.lastname}}</h2>
+        </div>
+        <div class="d-flex justify-content-center">
+       <img src="{{list.users.image}}" class="rounded-circle " style="height: 100px; width: 100px">
+        </div>
+      </div>
+      <div class="card">
+        <h3>Recent Blogs</h3>
+        <div class="fakeimg text-center"><img src="{{Blogs[3].blogimage}}" style="width: 200px; height: 100px"></div><br>
+        <div class="fakeimg"><img src="{{Blogs[2].blogimage}}" style="width: 200px; height: 100px"></div><br>
+        <div class="fakeimg"><img src="{{Blogs[1].blogimage}}" style="width: 200px; height: 100px"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <footer class="colophon">
+
+
+                  <div class="btn btn-primary d-flex  text-center" [routerLink]="['/home']"><i class="material-icons">
+                    fast_rewind
+                  </i><p>Back</p></div>
+
+
+
+
+
+              </footer>
+  </div>
+
+</div>
+
+
+<div class="container">
+  <div class="modal fade" id="edit-blog-modal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <h4 class="modal-title text-danger blog ">UPDATE BLOG</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form class="form">
+            <div class="form-group row">
+              <label class="col-lg-4 col-form-label form-control-label">BLOG NAME</label>
+              <div class="col-lg-8">
+                <input class="form-control" type="text" name="blogname" [(ngModel)]="list.blogname" value="{{list.blogname}}">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-lg-4 col-form-label form-control-label">BLOG DETAIL</label>
+              <div class="col-lg-8">
+                <input class="form-control" type="text" name="blogdetail" [(ngModel)]="list.blogdetail" value="{{list.blogdetail}}">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-lg-4 col-form-label form-control-label">BLOG HEADING</label>
+              <div class="col-lg-8">
+                <input class="form-control" name="firstname" [(ngModel)]="list.blogdetail" value="{{list.blogdetail}}">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-lg-4 col-form-label form-control-label">BLOG CATEGORY</label>
+              <div class="col-lg-8">
+                <input class="form-control" type="text" name="category" [(ngModel)]="list.category" value="{{list.category}}">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-lg-4 col-form-label form-control-label">WEBSITE</label>
+              <div class="col-lg-8">
+                <input class="form-control" type="text" name="website" [(ngModel)]="list.website" value="{{list.website}}">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-lg-4 col-form-label form-control-label">BLOG IMAGE</label>
+              <div class="col-lg-8">
+                <input class="form-control" type="text" name="phn" [(ngModel)]="list.blogimage" value="{{list.blogimage}}">
+              </div>
+            </div>
+
+            <div>
+              <div class="btn btn-danger w-20" (click)="updatethisblog(list.blogid)" data-dismiss="modal">UPDATE
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

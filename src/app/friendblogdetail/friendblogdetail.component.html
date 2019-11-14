@@ -1,0 +1,70 @@
+
+
+<div class="main px-5">
+  <div class="row">
+    <div class="leftcolumn">
+
+      <div class="card">
+        <h2 class="text-danger blog">{{BlogById.blogname}}</h2>
+        <img style="height:300px;width: 600px" src="{{BlogById.blogimage}}">
+        <div class="mt-4">
+          <div class="d-flex ">
+            <div class="mr-3" > <i class="material-icons addlik" (click)="addlikes(BlogById.blogid)">
+              thumb_up
+            </i> <p>{{BlogById.likes}}</p></div>
+            <div > <i (click)="adddislikes(BlogById.blogid)" class="material-icons addlik">
+              thumb_down
+            </i><p  >{{BlogById.dislikes}}</p></div>
+          </div>
+        </div>
+        <h5>Author: {{BlogById.users.firstname}} {{BlogById.users.lastname}}</h5>
+        <p>Category: {{BlogById.category}}</p>
+        <p>Created Date:{{BlogById.date}}</p>
+        <p>For more Details:-<a href="{{BlogById.website}}" target="_blank">{{BlogById.website}}</a></p>
+
+
+        <hr>
+        <h4 class="blog text-danger">{{BlogById.category}}</h4>
+        <p>{{BlogById.blogdetail}}</p>
+        <hr>
+      </div>
+
+
+    </div>
+    <div class="rightcolumn">
+      <div class="card">
+        <h4 class="text-center">Profile</h4>
+        <div class="fakeimg text-center" style="height:80px;">
+          <h2 >{{BlogById.users.firstname}} {{BlogById.users.lastname}}</h2>
+        </div>
+        <div class="d-flex justify-content-center">
+          <img src="{{BlogById.users.image}}" class="rounded-circle " style="height: 100px; width: 100px">
+        </div>
+      </div>
+<!--      <div class="card">-->
+<!--        <h3>Recent Blogs</h3>-->
+<!--        <div class="fakeimg text-center"><img src="{{BlogById[3].blogimage}}" style="width: 200px; height: 100px"></div><br>-->
+<!--        <div class="fakeimg"><img src="{{BlogById[2].blogimage}}" style="width: 200px; height: 100px"></div><br>-->
+<!--        <div class="fakeimg"><img src="{{BlogById[1].blogimage}}" style="width: 200px; height: 100px"></div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+  <div class="footer">
+    <footer class="colophon">
+
+
+      <div class="btn btn-primary d-flex  text-center" [routerLink]="['/home']"><i class="material-icons">
+        fast_rewind
+      </i><p>Back</p></div>
+
+
+
+
+
+    </footer>
+  </div>
+
+</div>
+  </div>
+</div>
