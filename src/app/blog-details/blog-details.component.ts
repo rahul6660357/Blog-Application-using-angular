@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
-import {BlogserviceService} from "../blogservice.service";
-import {UserserviceService} from "../userservice.service";
+import {ActivatedRoute, Router} from '@angular/router';
+import {BlogserviceService} from '../blogservice.service';
+import {UserserviceService} from '../userservice.service';
 
 @Component({
   selector: 'app-blog-details',
@@ -12,12 +12,13 @@ export class BlogDetailsComponent implements OnInit {
 Blogs;
 blogid;
 BlogById;
-  private list: {  blogid: number , blogname: string, blogimage: string, blogdetail: string,
-      blogheading: string,website: string, date : object,likes: number, dislikes: number, category: string,access: string, users: object};
+  private list: {  blogid: number , blogname: string, blogimage: string ,
+    blogdetail: string, blogheading: string, website: string, date: object ,
+    likes: number, dislikes: number, category: string, access: string, users: object};
   yourname: any;
   private Profile;
   constructor(private activatedroute: ActivatedRoute, private service: BlogserviceService,
-              private router: Router,private https: UserserviceService) { }
+              private router: Router, private https: UserserviceService) { }
 
   ngOnInit() {
     this.service.getBlogs().subscribe((data3) => {
@@ -52,8 +53,8 @@ BlogById;
 
   addlikes(blogid) {
     this.service.AddLikes(blogid).subscribe((data) => {
-      this.service.getBlogs().subscribe((data) => {
-        this.Blogs = data;
+      this.service.getBlogs().subscribe((data1) => {
+        this.Blogs = data1;
         this.list = this.alldetails(this.blogid);
 
       });
@@ -62,8 +63,8 @@ BlogById;
 
   adddislikes(blogid) {
     this.service.ADDDislikes(blogid).subscribe((data) => {
-      this.service.getBlogs().subscribe((data) => {
-        this.Blogs = data;
+      this.service.getBlogs().subscribe((data1) => {
+        this.Blogs = data1;
         this.list = this.alldetails(this.blogid);
 
       });
@@ -75,4 +76,6 @@ this.service.UpdateBlog(blogid, this.list).subscribe((data5) => {
   this.ngOnInit();
 });
   }
+
+
 }

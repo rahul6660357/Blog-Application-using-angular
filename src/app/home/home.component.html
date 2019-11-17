@@ -1,3 +1,4 @@
+
 <div class="d-flex ">
   <div class="w-75">
 <div class="search w-25 m-5" >
@@ -10,7 +11,15 @@
     </div>
   </div>
 </div>
-
+    <div class="nav-item nav-link">Category : <select (change)="selectChangeHandler($event)">
+      <option>Select</option>
+      <option value="technology">Technology</option>
+      <option value="food">Food</option>
+      <option value="Quote">Quotes</option>
+      <option value="Cloths">Cloths</option>
+      <option value="Travel">Travel</option>
+    </select>
+    </div>
 
 <div *ngFor="let b of Blogs">
 
@@ -33,6 +42,8 @@ thumb_down
         </div>
       </div>
       <div class="d-flex"> <i>written By:-</i><b>{{b.users.firstname}} {{b.users.lastname}}</b></div>
+      <p *ngIf="b.users.firstname == yourname" class="text-danger" style="cursor: pointer"  (click)="deleteblog(b.blogid)">Delete Blog</p>
+
     </div>
   </div>
 </div>

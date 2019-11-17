@@ -32,7 +32,7 @@ export class AuthenticationServiceService {
     return this.httpClient.post('http://localhost:8081/Users/adduser' , data).subscribe((data5) => {
       this.router.navigate(['/userlogin']);
     }, (error1 => {
-      alert("Email Already exists");
+      alert('Email Already exists');
     }));
   }
 }

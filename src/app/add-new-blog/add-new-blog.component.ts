@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
-import {BlogserviceService} from "../blogservice.service";
+import {Router} from '@angular/router';
+import {BlogserviceService} from '../blogservice.service';
 
 @Component({
   selector: 'app-add-new-blog',
@@ -14,6 +14,7 @@ export class AddNewBlogComponent implements OnInit {
   blogimage;
   bloglink;
   blogheading;
+  blogaccess;
 
 
   constructor(private router: Router, private http: BlogserviceService) { }
@@ -28,13 +29,18 @@ export class AddNewBlogComponent implements OnInit {
       blogdetail: this.blogdetail,
       blogimage: this.blogimage,
       website: this.bloglink,
-      blogheading: this.blogheading
+      blogheading: this.blogheading,
+      access: this.blogaccess
     };
-   // console.log(data);
+    console.log(data);
 
     this.http.AddProduct(data).subscribe((data1) => {
       this.router.navigate(['/home']);
-alert("added Successfully");
+      alert('added Successfully!!');
     });
+  }
+
+  selectChangeHandler(event: any) {
+    this.blogaccess = event.target.value;
   }
 }

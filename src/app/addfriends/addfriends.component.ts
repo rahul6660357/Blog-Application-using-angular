@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
-import {AppserviceService} from "../appservice.service";
-import {BlogserviceService} from "../blogservice.service";
-import {UserserviceService} from "../userservice.service";
+import {Router} from '@angular/router';
+import {AppserviceService} from '../appservice.service';
+import {BlogserviceService} from '../blogservice.service';
+import {UserserviceService} from '../userservice.service';
 
 @Component({
   selector: 'app-addfriends',
@@ -14,11 +14,12 @@ export class AddfriendsComponent implements OnInit {
   yourname;
   Profile;
   search;
+  // tslint:disable-next-line:max-line-length
   constructor(private router: Router, private service: AppserviceService, private http: BlogserviceService,  private https: UserserviceService) { }
 
   ngOnInit() {
     this.http.getUsers().subscribe((data2) => {
-      this.Users =data2;
+      this.Users = data2;
 
     });
     this.https.getUserDetails().subscribe((data2) => {

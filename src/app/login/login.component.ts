@@ -33,14 +33,17 @@ export class LoginComponent implements OnInit {
     }
 
   signupfun() {
-    const data = {
-      email : this.Email,
-      password: this.Password,
-      firstname: this.Username
-    };
-    if(this.Password== this.Password1)
-    {
-      this.authservice.sendnewUser(data);
+    if( this.Email != null && this.Password != null && this.Username != null) {
+      const data = {
+        email: this.Email,
+        password: this.Password,
+        firstname: this.Username
+      };
+      if (this.Password == this.Password1) {
+        this.authservice.sendnewUser(data);
+      }
+    } else {
+      alert('please check your credentials');
     }
   }
 }

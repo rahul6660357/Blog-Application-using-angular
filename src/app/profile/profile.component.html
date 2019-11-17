@@ -5,9 +5,9 @@
 <div class="container bg-dark p-5 ">
   <div class="row">
     <div class="col-sm-2 col-md-2 text-center">
-      <img src="../assets/Images/profile.jpg"
+      <img src="{{Profile.image}}"
            alt="" class="img-rounded img-responsive" />
-      <p class="font text-white mt-3">{{Profile.firstname}}</p>
+      <p class="font text-white mt-3">{{Profile.firstname}} {{Profile.lastname}}</p>
       <button class="m-4 btn-lg btn-success  "><a class="text-white" href="https://github.com/rahul6660357" >Profile</a></button>
     </div>
     <div class="col-sm-4 col-md-4 text-dark">
@@ -52,9 +52,10 @@
           <div class="tab-pane fade" id="profile">
             <form id="tab2">
               <div>Recent Password</div>
-              <input type="password" class="input-xlarge form-control" [(ngModel)]="oldpassword">
+              <input type="password" class="input-xlarge form-control" [(ngModel)]="recentpassword">
+
               <div>New Password</div>
-              <input type="password" class="input-xlarge form-control"  [(ngModel)]="Profile.password">
+              <input type="password" class="input-xlarge form-control" name="password" value="{{Profile.password}}"  [(ngModel)]="Profile.password">
               <div>
 
                 <div class="d-flex font"><div> Status:-</div><div class="text-success" *ngIf="Profile.active == 1; else elseBlock">Active</div>
